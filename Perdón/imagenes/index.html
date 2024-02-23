@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Holis rata explosiva</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <div id="message">
+      <h1>Te amo mucho mailob alias rata wera<br>♥</h1>
+      <img src="/imagenes/foto_2.webp" width="250" alt="flork flores">
+    </div>
+    <img src="/imagenes/illustration-excited-flork-meme-260nw-2250781185.webp" width="250" alt="flork llorando">
+    <h1>¿Me perdonas ratita explosiva?</h1>
+    <div class="options">
+      <button id="yes">Si</button>
+      <button id="no">No</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
+ 25 changes: 25 additions & 0 deletions25  
+san-valentin/script.js
+@@ -0,0 +1,25 @@
+const buttonNo = document.querySelector('#no')
+const buttonYes = document.querySelector('#yes')
+
+let fontSize = 2
+
+let messages = [
+  'Estas segura?',
+  'Piensalo bien',
+  'Piensalo muy bien',
+  'Piensalo',
+  'Mira el otro botón'
+]
+
+buttonNo.addEventListener('click', () => {
+  fontSize = fontSize + .5
+  buttonYes.style.fontSize = `${fontSize}rem`
+
+  const indexRandom = Math.floor(Math.random() * messages.length)
+
+  buttonNo.textContent = messages[indexRandom]
+})
+
+buttonYes.addEventListener('click', () => {
+  document.querySelector('#message').style.display = 'flex'
